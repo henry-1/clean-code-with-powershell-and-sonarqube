@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE report PUBLIC "-//JACOCO//DTD Report 1.1//EN" "report.dtd"[]>
+<report name="Pester (11/10/2023 13:44:38)">
+  <sessioninfo id="this" start="1699623872451" dump="1699623878284" />
+  <package name="C:/DEV/clean-code-with-powershell-and-sonarqube/example">
+    <class name="C:/DEV/clean-code-with-powershell-and-sonarqube/example/Invoke-GetGroup" sourcefilename="Invoke-GetGroup.ps1">
+      <method name="&lt;script&gt;" desc="()" line="2">
+        <counter type="INSTRUCTION" missed="4" covered="0" />
+        <counter type="LINE" missed="4" covered="0" />
+        <counter type="METHOD" missed="1" covered="0" />
+      </method>
+      <counter type="INSTRUCTION" missed="4" covered="0" />
+      <counter type="LINE" missed="4" covered="0" />
+      <counter type="METHOD" missed="1" covered="0" />
+      <counter type="CLASS" missed="1" covered="0" />
+    </class>
+    <class name="C:/DEV/clean-code-with-powershell-and-sonarqube/example/Invoke-GetUser" sourcefilename="Invoke-GetUser.ps1">
+      <method name="&lt;script&gt;" desc="()" line="2">
+        <counter type="INSTRUCTION" missed="4" covered="0" />
+        <counter type="LINE" missed="4" covered="0" />
+        <counter type="METHOD" missed="1" covered="0" />
+      </method>
+      <counter type="INSTRUCTION" missed="4" covered="0" />
+      <counter type="LINE" missed="4" covered="0" />
+      <counter type="METHOD" missed="1" covered="0" />
+      <counter type="CLASS" missed="1" covered="0" />
+    </class>
+    <sourcefile name="Invoke-GetGroup.ps1">
+      <line nr="2" mi="1" ci="0" mb="0" cb="0" />
+      <line nr="4" mi="1" ci="0" mb="0" cb="0" />
+      <line nr="6" mi="1" ci="0" mb="0" cb="0" />
+      <line nr="8" mi="1" ci="0" mb="0" cb="0" />
+      <counter type="INSTRUCTION" missed="4" covered="0" />
+      <counter type="LINE" missed="4" covered="0" />
+      <counter type="METHOD" missed="1" covered="0" />
+      <counter type="CLASS" missed="1" covered="0" />
+    </sourcefile>
+    <sourcefile name="Invoke-GetUser.ps1">
+      <line nr="2" mi="1" ci="0" mb="0" cb="0" />
+      <line nr="4" mi="1" ci="0" mb="0" cb="0" />
+      <line nr="6" mi="1" ci="0" mb="0" cb="0" />
+      <line nr="8" mi="1" ci="0" mb="0" cb="0" />
+      <counter type="INSTRUCTION" missed="4" covered="0" />
+      <counter type="LINE" missed="4" covered="0" />
+      <counter type="METHOD" missed="1" covered="0" />
+      <counter type="CLASS" missed="1" covered="0" />
+    </sourcefile>
+    <counter type="INSTRUCTION" missed="8" covered="0" />
+    <counter type="LINE" missed="8" covered="0" />
+    <counter type="METHOD" missed="2" covered="0" />
+    <counter type="CLASS" missed="2" covered="0" />
+  </package>
+  <package name="C:/DEV/clean-code-with-powershell-and-sonarqube/example/modules">
+    <class name="C:/DEV/clean-code-with-powershell-and-sonarqube/example/modules/ExampleModule" sourcefilename="ExampleModule.psm1">
+      <method name="Get-MyName" desc="()" line="3">
+        <counter type="INSTRUCTION" missed="1" covered="0" />
+        <counter type="LINE" missed="1" covered="0" />
+        <counter type="METHOD" missed="1" covered="0" />
+      </method>
+      <method name="Get-User" desc="()" line="14">
+        <counter type="INSTRUCTION" missed="0" covered="8" />
+        <counter type="LINE" missed="0" covered="5" />
+        <counter type="METHOD" missed="0" covered="1" />
+      </method>
+      <method name="Get-Group" desc="()" line="30">
+        <counter type="INSTRUCTION" missed="0" covered="4" />
+        <counter type="LINE" missed="0" covered="3" />
+        <counter type="METHOD" missed="0" covered="1" />
+      </method>
+      <method name="&lt;script&gt;" desc="()" line="36">
+        <counter type="INSTRUCTION" missed="0" covered="2" />
+        <counter type="LINE" missed="0" covered="1" />
+        <counter type="METHOD" missed="0" covered="1" />
+      </method>
+      <counter type="INSTRUCTION" missed="1" covered="14" />
+      <counter type="LINE" missed="1" covered="9" />
+      <counter type="METHOD" missed="1" covered="3" />
+      <counter type="CLASS" missed="1" covered="0" />
+    </class>
+    <sourcefile name="ExampleModule.psm1">
+      <line nr="3" mi="1" ci="0" mb="0" cb="0" />
+      <line nr="14" mi="0" ci="1" mb="0" cb="0" />
+      <line nr="15" mi="0" ci="2" mb="0" cb="0" />
+      <line nr="16" mi="0" ci="2" mb="0" cb="0" />
+      <line nr="17" mi="0" ci="2" mb="0" cb="0" />
+      <line nr="19" mi="0" ci="1" mb="0" cb="0" />
+      <line nr="30" mi="0" ci="1" mb="0" cb="0" />
+      <line nr="31" mi="0" ci="2" mb="0" cb="0" />
+      <line nr="33" mi="0" ci="1" mb="0" cb="0" />
+      <line nr="36" mi="0" ci="2" mb="0" cb="0" />
+      <counter type="INSTRUCTION" missed="1" covered="14" />
+      <counter type="LINE" missed="1" covered="9" />
+      <counter type="METHOD" missed="1" covered="3" />
+      <counter type="CLASS" missed="1" covered="0" />
+    </sourcefile>
+    <counter type="INSTRUCTION" missed="1" covered="14" />
+    <counter type="LINE" missed="1" covered="9" />
+    <counter type="METHOD" missed="1" covered="3" />
+    <counter type="CLASS" missed="1" covered="0" />
+  </package>
+  <counter type="INSTRUCTION" missed="9" covered="14" />
+  <counter type="LINE" missed="9" covered="9" />
+  <counter type="METHOD" missed="3" covered="3" />
+  <counter type="CLASS" missed="3" covered="0" />
+</report>

@@ -1,0 +1,26 @@
+﻿<coverage version="1">
+	<file path="Invoke-GetGroup.ps1">
+		<lineToCover lineNumber="2" covered="False" />
+		<lineToCover lineNumber="4" covered="False" />
+		<lineToCover lineNumber="6" covered="False" />
+		<lineToCover lineNumber="8" covered="False" />
+	</file>
+	<file path="Invoke-GetUser.ps1">
+		<lineToCover lineNumber="2" covered="False" />
+		<lineToCover lineNumber="4" covered="False" />
+		<lineToCover lineNumber="6" covered="False" />
+		<lineToCover lineNumber="8" covered="False" />
+	</file>
+	<file path="modules/ExampleModule.psm1">
+		<lineToCover lineNumber="3" covered="False" />
+		<lineToCover lineNumber="14" covered="True" />
+		<lineToCover lineNumber="15" covered="True" />
+		<lineToCover lineNumber="16" covered="True" />
+		<lineToCover lineNumber="17" covered="True" />
+		<lineToCover lineNumber="19" covered="True" />
+		<lineToCover lineNumber="30" covered="True" />
+		<lineToCover lineNumber="31" covered="True" />
+		<lineToCover lineNumber="33" covered="True" />
+		<lineToCover lineNumber="36" covered="True" />
+	</file>
+</coverage>

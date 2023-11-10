@@ -73,6 +73,20 @@ if(($null -ne $env:PSScriptAnalyzerCustomRulePath) -and
 (Invoke-ScriptAnalyzer -Path "$inputDir" -Settings $settings | Select-Object RuleName, Message, Line, Column, Severity, @{Name='File';Expression={$_.Extent.File }} | ConvertTo-Xml).Save("$output")
 
 ```
+The sonar-ps-plugin must be re-compiled because the two XML files ``powershell-profile.xml`` and ``powershell-rules.xml`` as well as the Powershell script ``scriptAnalyzer.ps1`` are part of the sonar-ps-plugin jar file.
+```
+mvn install
+```
+
+If there is already an sonar-ps-plugin plugin installed in SonarQube, this must be removed from the Marketplace settings.
+
+After that
+1. Copy the output sonar-ps-plugin\sonar-ps-plugin\target\sonar-ps-plugin-0.5.1.jar to the extentions/plugins directory of your SonarQube instance.
+2. Restart SonarQube
+
+if you deploy this plaugin for the first time, you need to agree the risk taken to activate custom analyzer: in SonarQube - Administration - Marketplace.
+
 
 After these steps SonarQube respects PSScriptAnalyzer results including custom rules.
+
 
