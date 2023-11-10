@@ -179,9 +179,24 @@ sonar.dynamicAnalysis=reuseReports
 I added functions in scriptAnalyzer.ps1 to convert formats written by Pester into the generic Code Coverage format described [here](https://docs.sonarsource.com/sonarqube/9.9/analyzing-source-code/test-coverage/generic-test-data/).
 
 ## 4. How do see that it is working?
-I added a, very lightweigth demo project and a few screenshots to this repo to show how the results look like.
+I added the two modified Powershell scripts to the resources/modified folder.
+
+I also added a very lightweigth demo project and a few screenshots to this repo to show how the results look like.
+
+Folder structure
 
 ![folder structure](resources/pictures/FolderStructure.png)
-<img src="resources/pictures/FolderStructure.png"
-     alt="Project folder structure"
-     style="float: left; margin-right: 10px;" />
+
+Code Overview
+
+![code overview](resources/pictures/CodeOverview.png)
+
+Code Details View
+
+![code overview](resources/pictures/CodeDetailsView.png)
+
+Test and Code Coverage
+
+![code overview](resources/pictures/TestAndCoCoOverview.png)
+
+![activity view](resources/pictures/ActivityView.png)
