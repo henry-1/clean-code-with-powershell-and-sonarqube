@@ -3,7 +3,7 @@ param(
 [string]$inputDir,
 [string]$output
 )
-
+#region original
 Import-Module PSScriptAnalyzer
 
 $settings = @{
@@ -27,11 +27,11 @@ if(($null -ne $env:PSScriptAnalyzerCustomRulePath) -and
     "Parameters for ScriptAnalyzer:" | Out-Host
     $settings | Out-Host
 }
-
 #endregion added
 
 (Invoke-ScriptAnalyzer -Path "$inputDir" -Settings $settings | Select-Object RuleName, Message, Line, Column, Severity, @{Name='File';Expression={$_.Extent.File }} | ConvertTo-Xml).Save("$output")
 write-host "Finished ScriptAnalyzer" -ForegroundColor Green
+#endregion original
 
 # cut here if you only want to use PSScriptAnalyzer but do not want to integrate Pester
 
