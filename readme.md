@@ -199,4 +199,6 @@ Test and Code Coverage
 
 ![code overview](resources/pictures/TestAndCoCoOverview.png)
 
+Activity View
+
 ![activity view](resources/pictures/ActivityView.png)
