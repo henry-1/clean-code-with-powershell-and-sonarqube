@@ -1,5 +1,11 @@
 ﻿# SonarQube sonar-ps-plugin Integration
-Extent sonar-ps-plugin Integration to show Test Cases and Code Coverage in SonarQube
+Extent sonar-ps-plugin Integration to analyze scripts using custom rules and show Test Cases and Code Coverage in SonarQube
+
+# Inspired by PSScriptAnalyzer and Pester
+- [ScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer)
+- [Pester](https://pester.dev/docs/quick-start)
+- [SonarQube](https://www.sonarsource.com/)
+- [sonar-ps-plugin](https://github.com/gretard/sonar-ps-plugin)
 
 I really like the [sonar-ps-plugin](https://github.com/gretard/sonar-ps-plugin). But out of the box it misses:
 1. Custom rules for PSScriptAnalyzer
@@ -84,9 +90,98 @@ After that
 1. Copy the output sonar-ps-plugin\sonar-ps-plugin\target\sonar-ps-plugin-0.5.1.jar to the extentions/plugins directory of your SonarQube instance.
 2. Restart SonarQube
 
-if you deploy this plaugin for the first time, you need to agree the risk taken to activate custom analyzer: in SonarQube - Administration - Marketplace.
+If you deploy this plugin for the first time, you need to agree the risk taken to activate custom analyzer: in SonarQube - Administration - Marketplace.
 
 
 After these steps SonarQube respects PSScriptAnalyzer results including custom rules.
 
 
+# Analyze your Powershell code
+To be able to run the scan you need to download SonarScanner
+https://docs.sonarsource.com/sonarqube/9.9/analyzing-source-code/scanners/sonarscanner/
+
+1. Create a project for your Powershell scripts in SonarQube
+2. In your user profile choose Security and create a 'Project Analysis Token'
+3. In your script folder create a 'sonar-project.properties' file
+4. Add at least the values for the options as described here: https://docs.sonarsource.com/sonarqube/9.9/analyzing-source-code/analysis-parameters/
+
+- sonar.organization -> name of the org
+- sonar.host.url -> URI to your SonarQube instance
+- sonar.projectKey -> needs to be the name you gave the token in SonarQube
+- sonar.token -> the token you created
+5. From within your local scripts folder run the scan which will also transfer the analysis to your SonarQube instance
+```
+"C:\DEV\SonarScanner\sonar-scanner-5.0.1.3006\bin\sonar-scanner.bat" -X --debug
+```
+
+Used with
+- Sonar PS Plugin 0.5.1 (source code - self compiled)
+- SonarQube Community Edition Version 10.2 (build 77647) and
+
+# 2. Integrate Pester Tests
+The following steps explain how I integrated Pester into sonar-ps-plugin that tests are shown in SonarQube.
+
+## 2.1 Requirements
+1. Pester module needs to be installed locally. The script checks it by calling 'Get-Module' cmdlet.
+2. 'artefacts' folder must be available under the projects root folder. Pester configuration is set to store results into this folder.
+3. 'modules' folder. I decided to have on folder where additional code can be placed that needs also tobe scanned. Scripts in subfolders are allowed.
+
+## 2.2 Pester Configuration in scriptAnalyzer.ps1
+You can find the Pester configuration in the scriptAnalyzer.ps1 file as follows. Because this file is baked into the jar file of the sonar-ps-plugin, there is no way to modify it from ouside other than re-compiling. But as CodeCoverage analysis procedure later depends on it, I don't see a reason for altering.
+
+```powershell
+$configuration = @{
+    Run = @{
+        PassThru = $false
+        Path = 'tests/*'
+        TestExtension = '.Tests.ps1'
+    }
+    CodeCoverage = @{
+        Enabled = $true
+        Path = @('./*.ps*','modules/*.ps*')
+        OutputPath = $coverageReportFile
+        OutputFormat = 'CoverageGutters'       # JaCoCo, CoverageGutters
+        OutputEncoding = 'UTF8'
+    }
+    TestResult = @{
+        Enabled = $true
+        OutputFormat = "JUnitXml"      #  NUnitXml, NUnit2.5, NUnit3 or JUnitXml
+        OutputPath = $testReportFile
+        OutputEncoding = 'UTF8'
+        TestSuiteName = 'Pester'
+    }
+    Output = @{
+        Verbosity = 'Normal'           # Detailed, Normal, Filtered, Auto, Error
+    }
+}
+```
+
+If the requiremsnts are met, Pester is called imidiately after PSScriptAnalyzr finished.
+
+# 3. Code Coverage
+## 3.1 Requirements
+* Code Coverage depends on settings in the ``sonar-project.properties`` file.
+* Code Coerage depends on Pester tests
+
+These are the settings I added to the sonar-project.properties file. As with the Pester configuration file, do not alter these because the part for Code Coverage in the scriptAnalyzer.ps1 file depends on it as well as SonarQube itself does.
+
+```
+sonar.coverageReportPaths=artefacts/coverageReport.xml
+sonar.testExecutionReportPaths=artefacts/executionReport.xml
+sonar.jacoco.reportPath=artefacts
+sonar.coverage.jacoco.xmlReportPaths=artefacts
+sonar.junit.reportsPath=artefacts
+sonar.java.coveragePlugin=jacoco
+sonar.tests=tests
+sonar.dynamicAnalysis=reuseReports
+```
+
+I added functions in scriptAnalyzer.ps1 to convert formats written by Pester into the generic Code Coverage format described [here](https://docs.sonarsource.com/sonarqube/9.9/analyzing-source-code/test-coverage/generic-test-data/).
+
+## 4. How do see that it is working?
+I added a, very lightweigth demo project and a few screenshots to this repo to show how the results look like.
+
+![folder structure](resources/pictures/FolderStructure.png)
+<img src="resources/pictures/FolderStructure.png"
+     alt="Project folder structure"
+     style="float: left; margin-right: 10px;" />

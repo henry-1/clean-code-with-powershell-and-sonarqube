@@ -1,8 +1,8 @@
 ﻿<testExecutions version="1">
 	<file path="tests/Invoke-GetGroup.Tests.ps1">
-		<testCase name="Get-ADuser_returns_user_samaccountname" duration="13310" />
+		<testCase name="Get-ADuser_returns_user_samaccountname" duration="32460" />
 	</file>
 	<file path="tests/Invoke-GetUser.Tests.ps1">
-		<testCase name="Get-ADuser_returns_user_samaccountname" duration="290" />
+		<testCase name="Get-ADuser_returns_user_samaccountname" duration="560" />
 	</file>
 </testExecutions>

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE report PUBLIC "-//JACOCO//DTD Report 1.1//EN" "report.dtd"[]>
-<report name="Pester (11/10/2023 13:44:38)">
-  <sessioninfo id="this" start="1699623872451" dump="1699623878284" />
+<report name="Pester (11/10/2023 15:58:36)">
+  <sessioninfo id="this" start="1699631902588" dump="1699631916246" />
   <package name="C:/DEV/clean-code-with-powershell-and-sonarqube/example">
     <class name="C:/DEV/clean-code-with-powershell-and-sonarqube/example/Invoke-GetGroup" sourcefilename="Invoke-GetGroup.ps1">
       <method name="&lt;script&gt;" desc="()" line="2">

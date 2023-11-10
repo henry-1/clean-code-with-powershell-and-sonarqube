@@ -10,5 +10,6 @@
 
         # Assert
         $group.sAMaccountName | Should -Be "Group1"
+        #"Group2" | Should -Be "Group1"
     }
 }

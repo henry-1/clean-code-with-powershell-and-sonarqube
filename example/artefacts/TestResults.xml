@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
-<testsuites xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="junit_schema_4.xsd" name="Pester" tests="2" errors="0" failures="0" disabled="0" time="5.833">
-  <testsuite name="C:\DEV\clean-code-with-powershell-and-sonarqube\example\tests\Invoke-GetGroup.Tests.ps1" tests="1" errors="0" failures="0" hostname="W-HSCH-221224-0" id="0" skipped="0" disabled="0" package="C:\DEV\clean-code-with-powershell-and-sonarqube\example\tests\Invoke-GetGroup.Tests.ps1" time="5.716">
+<testsuites xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="junit_schema_4.xsd" name="Pester" tests="2" errors="0" failures="0" disabled="0" time="13.658">
+  <testsuite name="C:\DEV\clean-code-with-powershell-and-sonarqube\example\tests\Invoke-GetGroup.Tests.ps1" tests="1" errors="0" failures="0" hostname="W-HSCH-221224-0" id="0" skipped="0" disabled="0" package="C:\DEV\clean-code-with-powershell-and-sonarqube\example\tests\Invoke-GetGroup.Tests.ps1" time="13.254">
     <properties>
       <property name="clr-version" value="4.0.30319.42000" />
       <property name="user-domain" value="AzureAD" />
@@ -11,9 +11,9 @@
       <property name="junit-version" value="4" />
       <property name="user" value="HenrySchleichardt" />
     </properties>
-    <testcase name="Invoke-GetGroup.Get-ADuser_returns_user_samaccountname" status="Passed" classname="C:\DEV\clean-code-with-powershell-and-sonarqube\example\tests\Invoke-GetGroup.Tests.ps1" assertions="0" time="1.331" />
+    <testcase name="Invoke-GetGroup.Get-ADuser_returns_user_samaccountname" status="Passed" classname="C:\DEV\clean-code-with-powershell-and-sonarqube\example\tests\Invoke-GetGroup.Tests.ps1" assertions="0" time="3.246" />
   </testsuite>
-  <testsuite name="C:\DEV\clean-code-with-powershell-and-sonarqube\example\tests\Invoke-GetUser.Tests.ps1" tests="1" errors="0" failures="0" hostname="W-HSCH-221224-0" id="1" skipped="0" disabled="0" package="C:\DEV\clean-code-with-powershell-and-sonarqube\example\tests\Invoke-GetUser.Tests.ps1" time="0.117">
+  <testsuite name="C:\DEV\clean-code-with-powershell-and-sonarqube\example\tests\Invoke-GetUser.Tests.ps1" tests="1" errors="0" failures="0" hostname="W-HSCH-221224-0" id="1" skipped="0" disabled="0" package="C:\DEV\clean-code-with-powershell-and-sonarqube\example\tests\Invoke-GetUser.Tests.ps1" time="0.404">
     <properties>
       <property name="clr-version" value="4.0.30319.42000" />
       <property name="user-domain" value="AzureAD" />
@@ -24,6 +24,6 @@
       <property name="junit-version" value="4" />
       <property name="user" value="HenrySchleichardt" />
     </properties>
-    <testcase name="Invoke-GetUser.Get-ADuser_returns_user_samaccountname" status="Passed" classname="C:\DEV\clean-code-with-powershell-and-sonarqube\example\tests\Invoke-GetUser.Tests.ps1" assertions="0" time="0.029" />
+    <testcase name="Invoke-GetUser.Get-ADuser_returns_user_samaccountname" status="Passed" classname="C:\DEV\clean-code-with-powershell-and-sonarqube\example\tests\Invoke-GetUser.Tests.ps1" assertions="0" time="0.056" />
   </testsuite>
 </testsuites>
